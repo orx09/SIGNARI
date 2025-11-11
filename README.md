@@ -7,9 +7,10 @@ Este es el **avance del proyecto** que estamos haciendo sobre la creación la **
 El proyecto está siendo desarrollado con **HTML**, **CSS** y **JavaScript**.  
 Aún está en proceso, pero ya se puede abrir y probar directamente desde el navegador.
 por si ocupan ejecutarlo o tomas cpt para sus documentos que les piden
-la app la desarrolle en con la finalidas de que sea web y ala vez apk 
+
+La app la desarrolle en con la finalidas de que sea web y ala vez apk 
 y asi fasilitar su uso 
-metan eso en su domunetacion les va ayudar 
+metan eso en su documentacionles va ayudar 
 
 ---
 
