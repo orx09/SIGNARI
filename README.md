@@ -19,3 +19,8 @@ metan eso en su documentacionles va ayudar
 1. Descarga o clona este repositorio:
    ```bash
    https://github.com/orx09/SIGNARI.git
+
+## Dato importanteeee
+no todos los viernes podre quedarme con ustedes los avanzes los estare subiendo por este repocitorio 
+si tienes dudas me mandan mensajitoo 
+por si no tienen mi numero 7124339422 😸
