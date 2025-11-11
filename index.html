@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traductor de Lenguaje de Señas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Traductor de Lenguaje de Señas</h1>
+            <p>Comunicación sin barreras</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" onclick="switchMode('camera')">📹 Señas a Texto</button>
+            <button class="tab" onclick="switchMode('text')">✍️ Texto a Señas</button>
+        </div>
+
+        <div class="content">
+            <!-- Modo Cámara -->
+            <div id="camera-mode" class="mode active">
+                <div class="status loading" id="status">🔄 Cargando MediaPipe...</div>
+                
+                <div class="video-container">
+                    <video id="video" autoplay playsinline></video>
+                    <canvas id="canvas"></canvas>
+                </div>
+
+                <div class="controls">
+                    <button class="btn btn-primary" id="startBtn" onclick="startCamera()">▶️ Iniciar Cámara</button>
+                    <button class="btn btn-secondary" id="switchBtn" onclick="switchCamera()" disabled>🔄 Cambiar Cámara</button>
+                    <button class="btn btn-secondary" id="stopBtn" onclick="stopCamera()" disabled>⏹️ Detener</button>
+                    <button class="btn btn-secondary" onclick="clearDetectedText()">🗑️ Borrar</button>
+                </div>
+
+                <div class="output-box">
+                    <h3>📝 Texto Detectado:</h3>
+                    <div class="output-text" id="detectedText">Las señas aparecerán aquí...</div>
+                </div>
+
+                <div class="info-box">
+                    <h4>💡 Instrucciones:</h4>
+                    <ul>
+                        <li>Presiona "Iniciar Cámara" para comenzar</li>
+                        <li>Coloca tu mano frente a la cámara</li>
+                        <li>Haz las señas del abecedario claramente</li>
+                        <li>Sostén cada seña por 2 segundos</li>
+                        <li>Usa el botón "Borrar" para limpiar el texto</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Modo Texto -->
+            <div id="text-mode" class="mode">
+                <div class="input-container">
+                    <input 
+                        type="text" 
+                        id="textInput" 
+                        placeholder="Escribe el texto que quieres convertir a señas..."
+                        oninput="textToSigns()"
+                        maxlength="50"
+                    >
+                </div>
+
+                <div class="output-box">
+                    <h3>🤟 Señas Generadas:</h3>
+                    <div class="sign-display" id="signDisplay">
+                        <p style="color: #999; text-align: center; width: 100%;">Escribe algo en el campo de arriba...</p>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <h4>💡 Instrucciones:</h4>
+                    <ul>
+                        <li>Escribe el texto en el campo superior</li>
+                        <li>Las señas aparecerán automáticamente</li>
+                        <li>Solo letras del alfabeto (A-Z)</li>
+                        <li>Máximo 50 caracteres</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MediaPipe Hands -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+    
+    <!-- Tu JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
