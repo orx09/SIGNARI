@@ -17,4 +17,4 @@ metan eso en su domunetacion les va ayudar
 
 1. Descarga o clona este repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/nombre-del-repo.git
+   https://github.com/orx09/SIGNARI.git
